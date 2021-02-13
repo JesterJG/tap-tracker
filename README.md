@@ -1,3 +1,6 @@
+This is a simple app that lets you track counts for a number of categories. You can add and delete the individual trackers and rename them as well.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
