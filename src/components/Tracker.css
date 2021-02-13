@@ -1,3 +1,6 @@
+ul {
+  list-style: decimal;
+}
 li {
   width: 260px;
 }
@@ -18,5 +21,6 @@ input {
 
 .manageT {
   display: inline-block;
+  background: azure;
   margin-left: 20px;
 }
