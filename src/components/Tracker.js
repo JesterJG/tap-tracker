@@ -5,11 +5,11 @@ import './Tracker.css';
 const Tracker = ({ onIncr, onDecr, onReset, onDelete, onRename, id, name, value }) => (
   <li>
     <form>
-    <input value={name}
-      onChange={e => onRename(id, e.target.value)}
-     />
+      <input value={name}
+        onChange={e => onRename(id, e.target.value)}
+       />
     </form>
-    <div>
+    <div className="myEntry">
       <div className="trackerVal">
         Current value: {value}
         <div className="modTrackers">
