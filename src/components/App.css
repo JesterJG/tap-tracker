@@ -1,7 +1,18 @@
+body {
+  background-color: antiquewhite;
+}
 h1 {
   text-align: center;
 }
 
+h2 {
+  margin-left: 20px;
+}
+
+.manage-list {
+  margin-left: 10px;
+  margin-top: 40px;
+}
 button.manage {
   margin: 10px;
 }
