@@ -18,7 +18,7 @@ const logList = (trackers) => {
   var alertStr = "List: {";
   for (let j=0 ; j<trackerList.length; j +=1) {
     alertStr += "{id: " + trackerList[j].id +  " name: " + trackerList[j].name + ": " + trackerList[j].value + "}";
-    trackerList[j].id = j;
+    //trackerList[j].id = j;
   }
   alertStr += "}";
   alert(alertStr);

@@ -32,6 +32,7 @@ TrackerList.propTypes = {
   incrTracker: PropTypes.func.isRequired,
   decrTracker: PropTypes.func.isRequired,
   resetTracker: PropTypes.func.isRequired,
+  deleteTracker: PropTypes.func.isRequired,
   renameTracker: PropTypes.func.isRequired
 }
 
