@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { incrTracker, decrTracker, resetTracker, deleteTracker, renameTracker } from '../actions'
-import TrackerList from '../components/TrackerList'
+import TrackerList from '../components/trackerList.jsx'
 
 
 const mapStateToProps = state => {

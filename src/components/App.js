@@ -5,7 +5,7 @@ import './App.css';
 
 const App = () => (
   <div className="TapTracker">
-    <h1> Welcome to TapTracker </h1>
+    <h1 className="text-center"> Welcome to TapTracker </h1>
     <TrackerListContainer />
     <ManageList />
   </div>
