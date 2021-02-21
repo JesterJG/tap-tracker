@@ -13,27 +13,27 @@ export const RENAME_TRACKER = 'RENAME_TRACKER'
  * action creators
  */
 
-export function addTracker(nextId, name, value) {
+export function addTracker(name) {
 
-  return { type: ADD_TRACKER, id: nextId, name, value }
+  return { type: ADD_TRACKER, name }
 }
 
-export function incrTracker(index) {
-  return { type: INCR_TRACKER, index }
+export function incrTracker(id) {
+  return { type: INCR_TRACKER, id }
 }
 
-export function decrTracker(index) {
-  return { type: DECR_TRACKER, index }
+export function decrTracker(id) {
+  return { type: DECR_TRACKER, id }
 }
 
-export function resetTracker(index) {
-  return { type: RESET_TRACKER, index }
+export function resetTracker(id) {
+  return { type: RESET_TRACKER, id }
 }
 
-export function deleteTracker(index) {
-  return { type: DELETE_TRACKER, index }
+export function deleteTracker(id) {
+  return { type: DELETE_TRACKER, id }
 }
 
-export function renameTracker(index, name) {
-  return { type: RENAME_TRACKER, index, name }
+export function renameTracker(id, name) {
+  return { type: RENAME_TRACKER, id, name }
 }

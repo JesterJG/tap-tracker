@@ -19,86 +19,76 @@ const initialState = {
       name: "Tracker2",
       value: 0,
     }],
+  nextId: 2,
 }
 
-function deleteEntry(array, index) {
-  let newArray = array.slice()
-  newArray.splice(index, 1)
-  for (let j=0 ; j<newArray.length; j +=1) {
-    newArray[j].id = j;
-  }
-  return newArray
-}
-
-function trackerApp(state = initialState, action) {
+export default function trackerReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_TRACKER:
       return Object.assign({}, state, {
         trackers: [
           ...state.trackers,
           {
-            id: action.id,
+            id: state.nextId,
             name: action.name,
-            value: action.value
+            value: 0
           }
         ],
+        nextId: state.nextId+1
       })
     case INCR_TRACKER:
-      return Object.assign({}, state, {
+      return {...state,
         trackers:
-          state.trackers.map((tracker, index) => {
-            if (index === action.index) {
-              return Object.assign({}, tracker, {
+          state.trackers.map((tracker) => {
+            if (tracker.id === action.id) {
+              return {...tracker,
                 value: tracker.value + 1
-              })
+              }
             }
             return tracker;
           })
-        })
+        };
     case DECR_TRACKER:
-      return Object.assign({}, state, {
+      return { ...state,
         trackers:
-          state.trackers.map((tracker, index) => {
-            if (index === action.index) {
-              return Object.assign({}, tracker, {
+          state.trackers.map((tracker) => {
+            if (tracker.id === action.id) {
+              return { ...tracker,
                 value: tracker.value - 1
-              })
+              }
             }
             return tracker;
           })
-        })
+        }
     case RESET_TRACKER:
-      return Object.assign({}, state, {
+      return { ...state,
         trackers:
-          state.trackers.map((tracker, index) => {
-            if (index === action.index) {
-              return Object.assign({}, tracker, {
+          state.trackers.map((tracker) => {
+            if (tracker.id === action.id) {
+              return {...tracker,
                 value: 0
-              })
+              }
             }
             return tracker;
           })
-        })
+        }
         case DELETE_TRACKER:
-          return Object.assign({}, state, {
-            trackers:
-              deleteEntry(state.trackers, action.index)
-            })
+          return { ...state,
+            trackers: state.trackers.filter(n => n.id !== action.id)
+            }
       case RENAME_TRACKER:
-        return Object.assign({}, state, {
+        return { ...state,
           trackers:
-            state.trackers.map((tracker, index) => {
-              if (index === action.index) {
-                return Object.assign({}, tracker, {
+            state.trackers.map((tracker) => {
+              if (tracker.id === action.id) {
+                return {...tracker,
                   name: action.name
-                })
+                }
               }
               return tracker;
             })
-          })
+          }
     default:
       return state;
   }
 }
-
-export default trackerApp;
