@@ -1,39 +1,44 @@
-import React from 'react'
+/*import React from 'react'
 import PropTypes from 'prop-types'
-import './Tracker.css';
 
-const Tracker = ({ onIncr, onDecr, onReset, onDelete, onRename, id, name, value }) => (
+const TrackerX = ({ onIncr, onDecr, onReset, onDelete, onRename, tracker }) => (
   <li>
-    <form>
-    <input value={name}
-      onChange={e => onRename(id, e.target.value)}
-     />
+  <div className="border border-dark pl-3 pb-2">
+    <form className="mt-2">
+      <input value={tracker.name}
+        onChange={e => onRename(tracker.id, e.target.value)}
+       />
     </form>
-    <div>
+    <div className="myEntry">
       <div className="trackerVal">
-        Current value: {value}
-        <div className="modTrackers">
-          <button
+        <div>
+          Current value: {tracker.value}
+        </div>
+        <div className="row">
+          <div className="col-1 ml-2">
+            <button className="btn btn-light btn-sm btn-outline-dark ml-3"
             onClick={onIncr}
           > + </button>
-          <button
+          <button className="btn btn-light btn-sm btn-outline-dark"
              onClick={onDecr}
           > - </button>
-          <div className="manageGroup">
-            <button class="manageT"
+          </div>
+          <div className="col-7 manageGroup">
+            <button className="manageT btn btn-outline-dark ml-1"
               onClick={onReset}
             >Reset</button>
-            <button class="manageT"
+            <button className="manageT btn btn-danger ml-2"
               onClick={onDelete}
             >Delete</button>
           </div>
         </div>
       </div>
     </div>
+    </div>
   </li>
 );
 
-Tracker.propTypes = {
+TrackerX.propTypes = {
   onIncr: PropTypes.func.isRequired,
   onDecr: PropTypes.func.isRequired,
   onReset: PropTypes.func.isRequired,
@@ -44,4 +49,4 @@ Tracker.propTypes = {
   value: PropTypes.number.isRequired
 }
 
-export default Tracker;
+export default TrackerX;*/

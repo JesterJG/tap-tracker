@@ -14,12 +14,10 @@ import { addTracker } from '../actions'
 */
 
 const logList = (trackers) => {
-  const trackerList = trackers;
+
+  const entry = tracker => alertStr += `{ id: ${tracker.id} name: "${tracker.name}" val: ${tracker.value} }\n`
   var alertStr = "List: {";
-  for (let j=0 ; j<trackerList.length; j +=1) {
-    alertStr += "{id: " + trackerList[j].id +  " name: " + trackerList[j].name + ": " + trackerList[j].value + "}";
-    trackerList[j].id = j;
-  }
+  trackers.forEach(entry);
   alertStr += "}";
   alert(alertStr);
 }
@@ -27,11 +25,11 @@ const logList = (trackers) => {
 const ManageList = ({ trackers, dispatch }) => {
   return (
     <div className="manage-list">
-      <button className="manage"
-        onClick={e => dispatch(addTracker(trackers.length, 'NewTracker', 0))} >
+      <button  className="btn btn-light btn-sm btn-outline-dark ml-5"
+        onClick={e => dispatch(addTracker('NewTracker'))} >
         New Tracker
       </button>
-      <button onClick={() => logList(trackers)} >
+      <button  className="btn btn-light btn-sm btn-outline-dark ml-5" onClick={() => logList(trackers)} >
         Log List
       </button>
     </div>

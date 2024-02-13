@@ -1,7 +1,10 @@
-h1 {
-  text-align: center;
+body {
+  background-color: antiquewhite;
 }
-
+.manage-list {
+  margin-left: 10px;
+  margin-top: 40px;
+}
 button.manage {
   margin: 10px;
 }
